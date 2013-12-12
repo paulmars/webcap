@@ -1,1 +1,1 @@
-renderer:  phantomjs screenshot.coffee
+renderer: phantomjs screenshot.coffee

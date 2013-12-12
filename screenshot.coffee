@@ -35,8 +35,19 @@
 
 WebPage = require("webpage")
 page = WebPage.create()
-page.open "http://google.com"
-console.log "starting"
+
+url = "http://google.com"
+
+page.open url, (status) ->
+  console.log "status", url, status
+
+# page.onAlert = (msg) ->
+#   console.log msg
+
+# page.onError = (msg, trace) ->
+#   console.log msg
+#   trace.forEach (item) -> console.log "  ", item.file, ":", item.line
+
 page.onLoadFinished = ->
   console.log "finished"
   page.render "googleScreenShot" + ".png"
